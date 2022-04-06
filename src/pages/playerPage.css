@@ -1,0 +1,157 @@
+.plr_cont{
+    padding-top: 50px;
+    padding-left: 80px;
+    padding-right: 80px;
+    background-color: #f8f9fa;
+}
+.plr_cont .raw{
+    padding: 25px;
+    padding-top: 50px;
+    background-color: #f8f9fa;
+}
+.plr_col{
+    background-color:  rgb(97 110 110);
+    width: 100%;
+    margin-bottom: 50px;
+    height: 170px;
+    --bs-gutter-x :0rem!important;
+    padding: 5px;
+    padding-right: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.plr_col .col-md-3 h5{
+    margin-bottom: 20px;
+}
+.player_img{
+    padding: 10px 60px 10px 70px;
+}
+.player_img img{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+.player_name{
+    text-align: center;
+    padding-top: 55px;
+}
+.ic-img img{
+    position: relative;
+    top: 10px;
+    width:120px ;
+    height:140px ;
+    left: 65px;
+}
+.common{
+    padding: 25px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+
+}
+.common .ccmon{
+    border-right: 1px solid gray;
+    padding: 0px 20px;
+    font-size: 22px;
+}
+.common .ccmon p{
+    margin-bottom: 0rem
+}
+.common .cmonl{
+    border-right: 0px;
+}
+.common .cmonl img{
+    width: 95px;
+}
+.common .col-md-3{
+    font-size: 2rem;
+}
+.ic-img{
+    position: relative;
+    float: left;
+}
+.ic-img span{
+    position: relative;
+    color: #048529;
+    background-color: #d7d7d7;
+    padding: 8px 10px;
+    border-radius: 20px;
+    font-size: 1.6rem;
+}
+.ic-img span span{
+    color: black;
+    padding: 0px;
+    font-size: 1.7rem;
+}
+.ic-img div{
+    position: absolute;
+    top: 20px;
+    display: inline-grid;
+    width: 150px;
+    right: -80px;
+}
+.ic-img div p{
+    text-align: center;
+    margin: 0px;
+    font-size: 25px;
+    font-weight: bolder;
+}
+.img-bigCnt svg{
+    font-size: 2.3rem; 
+}
+.img-bigCnt .dropdown{
+    float: right;
+}
+.img-bigCnt .dropdown button{
+    background-color: transparent;
+    border: 0px solid;
+    color: black;
+    padding: 2px;
+    /*font-size: 45px;
+    font-weight: 900;
+    position: absolute;
+    right:-20px;
+    top: -30px;
+    height: 20px;*/
+}
+
+.img-bigCnt .dropdown button::after{
+    content: '';
+    background-color: transparent;
+    border: 0px solid;
+    color: black;
+}
+.col-rating h5 span{
+    padding: 0px 15px;
+    color: #00c138;
+
+}
+
+.prgbar{
+    position: relative;
+}
+.prgbar .progress{
+
+    font-size: 20px;
+    height: 1.6rem;
+}
+.prgbar .progress .bg-danger{
+    text-align: right;
+    padding-right: 10px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.prgbar .bg-warning{
+    margin: 0px 10px;
+    color: #1b1f2c;
+}
+.col-rating .h_holder{
+    margin-bottom: 20px;
+
+}
+.col-rating .h_holder p{   
+    font-size: .75rem;
+    color: #b8b5b5;
+
+}

@@ -1,0 +1,10 @@
+.vcont{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.wdss{
+    width: 100%;
+}
