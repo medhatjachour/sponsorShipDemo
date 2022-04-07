@@ -1,6 +1,7 @@
 import React ,{useState} from 'react';
 import './filter.css'
 
+import { Button } from 'react-bootstrap';
 import { BsExclamationCircle } from "react-icons/bs";
 
 const Filter = ({
@@ -15,7 +16,8 @@ const Filter = ({
   onLeagueFilter,
   player_awards,
   onAwardsFilter,
-  onSocialFilter
+  onSocialFilter,
+  onReset
 
 }) => {
     
@@ -33,40 +35,50 @@ const Filter = ({
   const handleInput = (field) => (event) => {
     const { value } = event.target;
 
+    console.log(filters);
     setFilters({
       ...filters,
       [field]: value,
     });
 
+    console.log(field);
+    console.log(value);
     switch (field) {
       case "name":
+        console.log("name");
         onNameFilter(value);
-        break;
+        //break;
       case "personality":
+        console.log("personality");
         onPersonalityFilter(value);
-        break;
+       // break;
       case "ethnicity":
+        console.log("ethnicity");
         onEthinictyFilter(value);
-        break;
+       // break;
       case "position":
+        console.log("position");
         onPositionFilter(value);
-        break;
+       // break;
       case "league":
+        console.log("league");
         onLeagueFilter(value);
-        break;
+       // break;
       case "awards":
+        console.log("awards");
         onAwardsFilter(value);
-        break;
+        //break;
       case "follower":
+        console.log("follower");
        onSocialFilter(value);
-         break;
-
+        // break;
       default:
+        console.log("default");
         break;
     }
   };
 
-
+console.log(filters);
     return (
         <div className='holder_filter'>
     <div className="row ">
@@ -123,7 +135,7 @@ const Filter = ({
       </div>
 
       <div className="col-sm-12 my-2">
-        <label htmlFor="gender">position <BsExclamationCircle/> </label>
+        <label htmlFor="gender">Position <BsExclamationCircle/> </label>
         
         <select
           className="form-control"
@@ -142,7 +154,7 @@ const Filter = ({
 
 
       <div className="col-sm-12 my-2">
-        <label htmlFor="gender">league  <BsExclamationCircle/> </label>
+        <label htmlFor="gender">League  <BsExclamationCircle/> </label>
         
         <select
           className="form-control"
@@ -159,7 +171,7 @@ const Filter = ({
       </div>
       
       <div className="col-sm-12 my-2">
-        <label htmlFor="gender">personal awards  <BsExclamationCircle/> </label>
+        <label htmlFor="gender">Personal awards  <BsExclamationCircle/> </label>
 
         <select
           className="form-control"
@@ -178,7 +190,7 @@ const Filter = ({
 
       
       <div className="col-sm-12 my-2">
-        <label htmlFor="gender">social followers  <BsExclamationCircle/> </label>
+        <label htmlFor="gender">Social followers  <BsExclamationCircle/> </label>
         <select
           className="form-control"
           id="gender"
@@ -192,6 +204,11 @@ const Filter = ({
           <option value="1000001">More than 1,000,000</option>
 
         </select>
+      </div>
+      
+      <div className="col-sm-12 my-2">
+      <Button variant="outline-danger" onClick={onReset}>Reset</Button>
+      <Button variant="outline-success">Filter</Button>
       </div>
      
     </div>

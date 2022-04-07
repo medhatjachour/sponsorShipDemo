@@ -10,7 +10,7 @@
     background-color: #f8f9fa;
 }
 .plr_col{
-    background-color:  rgb(97 110 110);
+    background-color:  #02878c;
     width: 100%;
     margin-bottom: 50px;
     height: 170px;
@@ -22,6 +22,8 @@
 }
 .plr_col .col-md-3 h5{
     margin-bottom: 20px;
+    opacity: .7;
+    color: #414441;
 }
 .player_img{
     padding: 10px 60px 10px 70px;
@@ -34,13 +36,6 @@
 .player_name{
     text-align: center;
     padding-top: 55px;
-}
-.ic-img img{
-    position: relative;
-    top: 10px;
-    width:120px ;
-    height:140px ;
-    left: 65px;
 }
 .common{
     padding: 25px;
@@ -70,18 +65,25 @@
     position: relative;
     float: left;
 }
+.ic-img img{
+    position: relative;
+    top: 10px;
+    width:120px ;
+    height:140px ;
+    left: 65px;
+}
 .ic-img span{
     position: relative;
     color: #048529;
     background-color: #d7d7d7;
-    padding: 8px 10px;
+    padding: 2px 5px;
     border-radius: 20px;
-    font-size: 1.6rem;
+    font-size: 2.5rem;
+    text-align: center;
 }
 .ic-img span span{
-    color: black;
+    color: #048529;
     padding: 0px;
-    font-size: 1.7rem;
 }
 .ic-img div{
     position: absolute;

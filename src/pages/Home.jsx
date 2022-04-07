@@ -7,12 +7,13 @@ import "./home.css";
 const Home = () => {
   const [query, setQuery] = useState(Users);
 
+
   const handleFilterName = (name) => {
-    if (!name) {
-      console.log("noname");
+    if (!name) { 
       return setQuery(Users)
     }
     else{
+      
     const filteredData = query.filter((item) => {
       if (item.Name.toLowerCase().includes(name.toLowerCase())) {
         return item;
@@ -124,7 +125,7 @@ const Home = () => {
   const handleFilterSocial = (follower) => {
     
     if (follower === "Any"){
-      setQuery(Users)
+      //setQuery(Users)
     }
     else if (follower === "100000"){
       const filteredData = query.filter((item) => {
@@ -186,6 +187,9 @@ const Home = () => {
       setQuery(filteredData);
     }
   };
+  const handleReset = () => {
+    setQuery(Users)
+  }
   return (
     <>
     <div className="container-fluid">
@@ -205,6 +209,7 @@ const Home = () => {
               player_awards={generatePlayer_awardsDataForDropdown()}
               onAwardsFilter = {handleFilterawards}
               onSocialFilter = {handleFilterSocial}
+              onReset = {handleReset}
         />
           </div>
           <div className="col-md-9">

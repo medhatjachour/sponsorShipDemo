@@ -7,8 +7,8 @@ import img from "../assets/u90.png";
 import { Dropdown } from "react-bootstrap";
 import { BsThreeDots } from "react-icons/bs";
 import { BsExclamationCircle } from "react-icons/bs";
-import { BsFillShareFill } from "react-icons/bs";
-import { BsFillSave2Fill } from "react-icons/bs";
+//import { BsFillShareFill } from "react-icons/bs";
+//import { BsFillSave2Fill } from "react-icons/bs";
 
 import Image from "react-bootstrap/Image";
 import { ProgressBar } from "react-bootstrap";
@@ -79,7 +79,8 @@ const Playerpage = () => {
                 <div>
                   <p>PSV</p>
                   <span>
-                    <span>€</span> {player.Predicted_Sponsorship_value}K
+                  
+                    <span>€</span> {Math.abs(parseInt(player.Predicted_Sponsorship_value)) > 999 ? Math.sign(parseInt(player.Predicted_Sponsorship_value))*((Math.abs(parseInt(player.Predicted_Sponsorship_value))/1000).toFixed(1)) + 'k' : Math.sign(parseInt(player.Predicted_Sponsorship_value))*Math.abs(parseInt(player.Predicted_Sponsorship_value))}
                   </span>
                 </div>
               </div>
@@ -87,7 +88,7 @@ const Playerpage = () => {
                 <Dropdown.Toggle id="nav-dropdown-dark-example">
                   <BsThreeDots />
                 </Dropdown.Toggle>
-
+                  {/*
                 <Dropdown.Menu>
                   <Dropdown.Item href="#">
                     <BsFillSave2Fill /> Save Profile
@@ -96,6 +97,7 @@ const Playerpage = () => {
                     <BsFillShareFill /> Share
                   </Dropdown.Item>
                 </Dropdown.Menu>
+                */}
               </Dropdown>
             </div>
           </div>
@@ -144,7 +146,7 @@ const Playerpage = () => {
                 Total followers <BsExclamationCircle />{" "}
               </h5>
 
-              <p>{player.Total_Followers} </p>
+              <p>{parseInt(player.Total_Followers).toLocaleString("en-US")} </p>
             </div>
             <div className="col-md-3 ccmon">
               <h5>
@@ -157,24 +159,33 @@ const Playerpage = () => {
               <h5>
                 Ad value equivalent <BsExclamationCircle />{" "}
               </h5>{" "}
-              <p>€{player.Ad_value_equivalent}</p>
+              <p>€{Math.abs(parseInt(player.Ad_value_equivalent)) > 999 ? Math.sign(parseInt(player.Ad_value_equivalent))*((Math.abs(parseInt(player.Ad_value_equivalent))/1000).toFixed(1)) + 'k' : Math.sign(parseInt(player.Ad_value_equivalent))*Math.abs(parseInt(player.Ad_value_equivalent))}</p>
             </div>
           </div>
 
           <div className="plr_col common col-rating">
             <div className="h_holder">
             <h5>Overall Rating<span>  {player.Overall_rating}  </span>  </h5>
-              <p> * Industry range is between 38 : 68</p>
+             {/*  <p> * Industry range is between 38 : 68</p>*/}
               </div>
             <div className="prgbar">
               <ProgressBar>
               
                 <ProgressBar  variant="danger" now={player.Overall_rating>=38.33?38.33:player.Overall_rating} key={3} label= {player.Overall_rating>=38.33?38:player.Overall_rating} />
-                <ProgressBar  variant="warning" now={player.Overall_rating >= 68.33?68.33 - 38.33: player.Overall_rating <= 38.33 ? 0: 68.33 - player.Overall_rating} key={2} label= {player.Overall_rating >= 68.33?"38  - - Industry range - -  68": player.Overall_rating <= 38.33 ? 0:  player.Overall_rating } />
+                <ProgressBar  variant="warning" now={player.Overall_rating >= 68.33?68.33 - 38.33: player.Overall_rating <= 38.33 ? 0: 68.33 - player.Overall_rating} key={2} label= {player.Overall_rating >= 68.33?/*"38  - - Industry range - -  68"*/68: player.Overall_rating <= 38.33 ? 0:  player.Overall_rating } />
                 <ProgressBar  variant="success" now={player.Overall_rating>=68.33?player.Overall_rating-68.33:0 } label= {player.Overall_rating>=0?player.Overall_rating:''}  key={1} />
 
               </ProgressBar>
             </div>
+          </div>
+          <div>
+            <button>
+              Back
+            </button>
+            
+            <button>
+              New Search
+            </button>
           </div>
         </div>
       </div>

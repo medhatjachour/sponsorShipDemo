@@ -9,10 +9,10 @@ const Table = ({data}) => {
             <tbody>
                 <tr className='theader' >
                     <th >Name</th>
-                    <th>Current_club</th>
-                    <th>Total_Followers</th>
-                    <th>Overall_rating</th>
-                    <th>Predicted_Sponsorship_value</th>
+                    <th>Current club</th>
+                    <th>Total followers</th>
+                    <th>Overall rating</th>
+                    <th>Predicted sponsorship value</th>
                 </tr>
                 
                 {data.map(item => (
@@ -20,7 +20,7 @@ const Table = ({data}) => {
                     
                     <td><NavLink to={`/Playerpage/${item.id-1}`}>{item.Name}  </NavLink></td>
                     <td><NavLink to={`/Playerpage/${item.id-1}`}> {item.Current_club}</NavLink></td>
-                    <td><NavLink to={`/Playerpage/${item.id-1}`}>{item.Total_Followers}</NavLink></td>
+                    <td><NavLink to={`/Playerpage/${item.id-1}`}>{parseInt(item.Total_Followers).toLocaleString("en-US")}</NavLink></td>
                     <td><NavLink to={`/Playerpage/${item.id-1}`}>{item.Overall_rating} </NavLink></td>
                     <td><NavLink to={`/Playerpage/${item.id-1}`}>{item.Predicted_Sponsorship_value}</NavLink> </td>
                 
