@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import img from "../assets/u90.png";
 
-import { Dropdown } from "react-bootstrap";
+import { Dropdown, Button } from "react-bootstrap";
 import { BsThreeDots } from "react-icons/bs";
 import { BsExclamationCircle } from "react-icons/bs";
 //import { BsFillShareFill } from "react-icons/bs";
@@ -80,7 +80,7 @@ const Playerpage = () => {
                   <p>PSV</p>
                   <span>
                   
-                    <span>€</span> {Math.abs(parseInt(player.Predicted_Sponsorship_value)) > 999 ? Math.sign(parseInt(player.Predicted_Sponsorship_value))*((Math.abs(parseInt(player.Predicted_Sponsorship_value))/1000).toFixed(1)) + 'k' : Math.sign(parseInt(player.Predicted_Sponsorship_value))*Math.abs(parseInt(player.Predicted_Sponsorship_value))}
+                    <span>€</span> {Math.abs(parseInt(player.Predicted_Sponsorship_value)) > 999 ? ( Math.sign(parseInt(player.Predicted_Sponsorship_value))*((Math.abs(parseInt(player.Predicted_Sponsorship_value))/1000).toFixed(1)) )+ 'k' : Math.sign(parseInt(player.Predicted_Sponsorship_value))*Math.abs(parseInt(player.Predicted_Sponsorship_value))}
                   </span>
                 </div>
               </div>
@@ -139,7 +139,7 @@ const Playerpage = () => {
                 Predicted sponsorship <BsExclamationCircle />{" "}
               </h5>
 
-              <p>€{player.Predicted_Sponsorship_value} </p>
+              <p>€{parseInt(player.Predicted_Sponsorship_value).toLocaleString("en-US")} </p>
             </div>
             <div className="col-md-3 ccmon">
               <h5>
@@ -179,13 +179,9 @@ const Playerpage = () => {
             </div>
           </div>
           <div>
-            <button>
-              Back
-            </button>
+          <Button variant="link">Back</Button>
             
-            <button>
-              New Search
-            </button>
+  <Button variant="primary">New Search</Button>{' '}
           </div>
         </div>
       </div>

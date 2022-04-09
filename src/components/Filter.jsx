@@ -5,19 +5,14 @@ import { Button } from 'react-bootstrap';
 import { BsExclamationCircle } from "react-icons/bs";
 
 const Filter = ({
+  onHandleFilters,
   onNameFilter,
   personality_type ,
-  onPersonalityFilter,
   ethnicity_type,
-  onEthinictyFilter,
   player_position,
-  onPositionFilter,
   player_league,
-  onLeagueFilter,
   player_awards,
-  onAwardsFilter,
-  onSocialFilter,
-  onReset
+  onReset,
 
 }) => {
     
@@ -30,73 +25,102 @@ const Filter = ({
     awards: "",
     follower: "",
   });
-    
+
+ 
 
   const handleInput = (field) => (event) => {
     const { value } = event.target;
+    delete filters[field]; 
 
+    //setFilters({...filters,[field]: value,});
+    setFilters({[field]: value,...filters})
+    
+    if (field =" name"){
+    //onNameFilter(document.getElementById("name").value);
+  }
+    
+    /*
+      onNameFilter(value)
     console.log(filters);
-    setFilters({
-      ...filters,
-      [field]: value,
-    });
+    onPersonalityFilter(document.getElementById("personality_type").value);
+    onEthinictyFilter(document.getElementById("ethnicity_type").value);
+    onPositionFilter(document.getElementById("player_position").value);
+    onLeagueFilter(document.getElementById("player_league").value);
+    onSocialFilter(document.getElementById("Social").value);
+    onAwardsFilter(document.getElementById("awards").value);
 
-    console.log(field);
-    console.log(value);
+    /*
     switch (field) {
       case "name":
-        console.log("name");
         onNameFilter(value);
-        //break;
-      case "personality":
-        console.log("personality");
-        onPersonalityFilter(value);
-       // break;
-      case "ethnicity":
-        console.log("ethnicity");
-        onEthinictyFilter(value);
-       // break;
-      case "position":
-        console.log("position");
-        onPositionFilter(value);
-       // break;
-      case "league":
-        console.log("league");
-        onLeagueFilter(value);
-       // break;
-      case "awards":
-        console.log("awards");
-        onAwardsFilter(value);
-        //break;
-      case "follower":
-        console.log("follower");
-       onSocialFilter(value);
-        // break;
-      default:
-        console.log("default");
         break;
-    }
-  };
+      case "personality":
+        onPersonalityFilter(value);
+        break;
+      case "ethnicity":
+        onEthinictyFilter(value);
+        break;
+      case "position":
+        onPositionFilter(value);
+        break;
+      case "league":
+        onLeagueFilter(value);
+        break;
+      case "awards":
+        onAwardsFilter(value);
+        break;
+      case "follower":
+       onSocialFilter(value);
+       break;
+      default:
+        break;
+    }*/
 
-console.log(filters);
+  };
+ const handleFilters = ()=>{
+  console.log(filters);
+  onHandleFilters(filters)
+    
+  
+ }
+    
+
+const reset =() =>{
+  document.getElementById("player_position").selectedIndex = 0;
+  document.getElementById("personality_type").selectedIndex = 0;
+  document.getElementById("ethnicity_type").selectedIndex = 0;
+  document.getElementById("player_league").selectedIndex = 0;
+  document.getElementById("awards").selectedIndex = 0;
+  document.getElementById("Social").selectedIndex = 0;
+  setFilters({
+    name:"",
+    personality: "",
+    ethnicity: "",
+    position:"",
+    league: "",
+    awards: "",
+    follower: "",
+  })
+}
     return (
         <div className='holder_filter'>
     <div className="row ">
-      <div className="col">
-        <h4 className="border-bottom">Filters</h4>
-      </div>
       
-      <div className="col-sm-12 my-2">
+    <div className="col-sm-12 my-2">
         <label htmlFor="name">Name</label>
         <input
           placeholder='search ...'
           type="text"
           className="form-control"
           id="name"
-          value={filters.name}
           onChange={handleInput("name")}
+          value={filters.name}
         />
       </div>
+      <div className="col">
+        <h4 className="border-bottom">Filters</h4>
+      </div>
+      
 
       <div className="col-sm-12 my-2">
         <label htmlFor="name">Personality <BsExclamationCircle/> </label>
@@ -193,7 +217,7 @@ console.log(filters);
         <label htmlFor="gender">Social followers  <BsExclamationCircle/> </label>
         <select
           className="form-control"
-          id="gender"
+          id="Social"
           onChange={handleInput("follower")}
         >
           <option value="Any">Any</option>
@@ -207,8 +231,8 @@ console.log(filters);
       </div>
       
       <div className="col-sm-12 my-2">
-      <Button variant="outline-danger" onClick={onReset}>Reset</Button>
-      <Button variant="outline-success">Filter</Button>
+      <span onClick={reset}> <Button variant="outline-danger" onClick={onReset}> Reset </Button></span>
+      <Button variant="success" onClick={handleFilters}>Filter</Button>
       </div>
      
     </div>
