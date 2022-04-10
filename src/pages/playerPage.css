@@ -157,3 +157,10 @@
     color: #b8b5b5;
 
 }
+.playerButtonsHolder{
+    text-align: center;
+}
+.playerButtonsHolder .btn-link{
+    float: left;
+}
+

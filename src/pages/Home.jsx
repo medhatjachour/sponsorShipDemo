@@ -4,10 +4,10 @@ import { Users } from "../dummydata";
 import Filter from "../components/Filter";
 import "./home.css";
 
+let theData = Users
 
 const Home = () => {
   const [query, setQuery] = useState(Users);
-  let theData = Users
 
   const handleFilterName = (name) => {
     if (!name || name === " ") { 
@@ -151,7 +151,7 @@ const Home = () => {
               const stdt = `${item.Total_Followers }`
               const stSlct = value
         
-              if (parseInt(stdt) <= stSlct ){
+              if (parseInt(stdt) <= parseInt(stSlct )) {
                 return item  ;
               }
             });
@@ -164,7 +164,7 @@ const Home = () => {
               const stdt = `${item.Total_Followers }`
               const stSlct = value
         
-              if (parseInt(stdt) <= stSlct && parseInt(stdt) >= 100000 ){
+              if (parseInt(stdt) <= parseInt(stSlct ) && parseInt(stdt) >= 100000 ){
                 return item  ;
               }
             });
@@ -177,7 +177,7 @@ const Home = () => {
               const stdt = `${item.Total_Followers }`
               const stSlct = value
         
-              if (parseInt(stdt) <= stSlct && parseInt(stdt) >= 250000 ){
+              if (parseInt(stdt) <= parseInt(stSlct ) && parseInt(stdt) >= 250000 ){
                 return item  ;
               }
             });
@@ -190,7 +190,7 @@ const Home = () => {
               const stdt = `${item.Total_Followers }`
               const stSlct = value
         
-              if (parseInt(stdt) <= stSlct && parseInt(stdt) >= 500000 ){
+              if (parseInt(stdt) <= parseInt(stSlct ) && parseInt(stdt) >= 500000 ){
                 return item  ;
               }
             });
@@ -203,7 +203,7 @@ const Home = () => {
               const stdt = `${item.Total_Followers }`
               const stSlct = value
         
-              if (parseInt(stdt) >= stSlct ){
+              if (parseInt(stdt) >= parseInt(stSlct ) ){
                 return item  ;
               }
             });
@@ -217,11 +217,10 @@ const Home = () => {
          break;
        }
     }
-    console.log("query");
-    console.log(query);
   }
   const handleReset = () => {
     setQuery(Users)
+    theData = Users
   }
   const generatePersonality_TypeDataForDropdown = () => {
     return [...new Set(Users.map((item) => item.Personality_Type))];

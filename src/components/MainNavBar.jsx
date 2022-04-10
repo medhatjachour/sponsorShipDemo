@@ -6,11 +6,11 @@ const MainNavBar = () => {
     <>
       <Navbar bg="light" expand="lg" fixed="top">
         <Container>
-          <Navbar.Brand href="/">Sponsorship calculator </Navbar.Brand>
+          <Navbar.Brand href="#">Sponsorship calculator </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/" style={{borderRight: '1px solid gray'}}>Players Page & Search</Nav.Link>
+              <Nav.Link href="#" style={{borderRight: '1px solid gray'}}>Players Page & Search</Nav.Link>
 
             </Nav>
           </Navbar.Collapse>

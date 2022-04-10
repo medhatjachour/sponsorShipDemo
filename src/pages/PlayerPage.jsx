@@ -6,12 +6,15 @@ import img from "../assets/u90.png";
 
 import { Dropdown, Button } from "react-bootstrap";
 import { BsThreeDots } from "react-icons/bs";
+
 import { BsExclamationCircle } from "react-icons/bs";
+import { BsArrowLeftShort } from "react-icons/bs";
 //import { BsFillShareFill } from "react-icons/bs";
 //import { BsFillSave2Fill } from "react-icons/bs";
 
 import Image from "react-bootstrap/Image";
 import { ProgressBar } from "react-bootstrap";
+import { createHashHistory } from "history";
 const Playerpage = () => {
   const { id } = useParams();
 
@@ -54,7 +57,10 @@ const Playerpage = () => {
     };
     getPlayer_img();
   });
+  const goBackPage = () => {
+    createHashHistory().back()
 
+  }
   return (
     <>
       <div className="plr_cont container">
@@ -178,10 +184,11 @@ const Playerpage = () => {
               </ProgressBar>
             </div>
           </div>
-          <div>
-          <Button variant="link">Back</Button>
-            
-  <Button variant="primary">New Search</Button>{' '}
+          <div className="playerButtonsHolder">
+ 
+           <Button variant="link"onClick={goBackPage} ><BsArrowLeftShort/> Back</Button>
+    
+            <Button variant="primary" onClick={goBackPage}>New Search</Button>{' '}
           </div>
         </div>
       </div>
