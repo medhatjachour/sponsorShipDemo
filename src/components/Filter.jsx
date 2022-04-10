@@ -34,53 +34,13 @@ const Filter = ({
 
     //setFilters({...filters,[field]: value,});
     setFilters({[field]: value,...filters})
-    
     if (field =" name"){
-    //onNameFilter(document.getElementById("name").value);
-  }
-    
-    /*
-      onNameFilter(value)
-    console.log(filters);
-    onPersonalityFilter(document.getElementById("personality_type").value);
-    onEthinictyFilter(document.getElementById("ethnicity_type").value);
-    onPositionFilter(document.getElementById("player_position").value);
-    onLeagueFilter(document.getElementById("player_league").value);
-    onSocialFilter(document.getElementById("Social").value);
-    onAwardsFilter(document.getElementById("awards").value);
-
-    /*
-    switch (field) {
-      case "name":
-        onNameFilter(value);
-        break;
-      case "personality":
-        onPersonalityFilter(value);
-        break;
-      case "ethnicity":
-        onEthinictyFilter(value);
-        break;
-      case "position":
-        onPositionFilter(value);
-        break;
-      case "league":
-        onLeagueFilter(value);
-        break;
-      case "awards":
-        onAwardsFilter(value);
-        break;
-      case "follower":
-       onSocialFilter(value);
-       break;
-      default:
-        break;
-    }*/
-
+    onNameFilter(document.getElementById("name").value);
+    }
   };
  const handleFilters = ()=>{
   console.log(filters);
-  onHandleFilters(filters)
-    
+  onHandleFilters(filters)  
   
  }
     
@@ -106,8 +66,8 @@ const reset =() =>{
         <div className='holder_filter'>
     <div className="row ">
       
-    <div className="col-sm-12 my-2">
-        <label htmlFor="name">Name</label>
+    <div className="col-sm-12 my-2 nameHolder">
+        <h4 htmlFor="name">Filter By Name</h4>
         <input
           placeholder='search ...'
           type="text"

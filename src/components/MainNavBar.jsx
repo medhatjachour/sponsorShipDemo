@@ -10,7 +10,7 @@ const MainNavBar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#" style={{borderRight: '1px solid gray'}}>Players Page & Search</Nav.Link>
+              <Nav.Link href="/sponsorShipDemo" style={{borderRight: '1px solid gray'}}>Players Page & Search</Nav.Link>
 
             </Nav>
           </Navbar.Collapse>

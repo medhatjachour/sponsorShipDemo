@@ -1,6 +1,6 @@
 import "./playerPage.css";
 import { Users } from "../dummydata";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams} from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import img from "../assets/u90.png";
 
@@ -9,8 +9,6 @@ import { BsThreeDots } from "react-icons/bs";
 
 import { BsExclamationCircle } from "react-icons/bs";
 import { BsArrowLeftShort } from "react-icons/bs";
-//import { BsFillShareFill } from "react-icons/bs";
-//import { BsFillSave2Fill } from "react-icons/bs";
 
 import Image from "react-bootstrap/Image";
 import { ProgressBar } from "react-bootstrap";
@@ -48,9 +46,7 @@ const Playerpage = () => {
         setPlayer_img(require(`../assets/web/user.png`));
         setSponsor_img(require(`../assets/web/user.png`));
       } else {
-        console.log(typeof( player.Overall_rating));
-        console.log( player.Overall_rating);
-        
+
         setPlayer_img(require(`../assets/web/${player.id}.png`));
         setSponsor_img(require(`../assets/sponsers/${player.Sponsor}.png`));
       }
@@ -59,7 +55,8 @@ const Playerpage = () => {
   });
   const goBackPage = () => {
     createHashHistory().back()
-
+    
+  
   }
   return (
     <>
@@ -186,9 +183,12 @@ const Playerpage = () => {
           </div>
           <div className="playerButtonsHolder">
  
-           <Button variant="link"onClick={goBackPage} ><BsArrowLeftShort/> Back</Button>
-    
-            <Button variant="primary" onClick={goBackPage}>New Search</Button>{' '}
+           <Button variant="link"onClick={goBackPage} >
+
+             <BsArrowLeftShort/> Back  
+         
+             </Button>
+            <NavLink variant="primary" to="/" className = "newSearchButton">New Search</NavLink>{' '}
           </div>
         </div>
       </div>

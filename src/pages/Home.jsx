@@ -7,26 +7,28 @@ import "./home.css";
 let theData = Users
 
 const Home = () => {
+  
   const [query, setQuery] = useState(Users);
+
 
   const handleFilterName = (name) => {
     if (!name || name === " ") { 
-       return setQuery(Users)
+       //return setQuery(Users)
     }
     else{
-      
-    const filteredData = Users.filter((item) => {
+    const filteredDataName = Users.filter((item) => {
       if (item.Name.toLowerCase().includes(name.toLowerCase())) {
         return item;
       }
     });
-    setQuery(filteredData);
+    setQuery(filteredDataName);
   } 
   };
 
 
   const handleFilters = (filters) =>{
     
+    let theData = Users
     for (let index = 0; index < (Object.keys(filters)).length; index++) {
      const field = Object.keys(filters)[index]
      const value = filters[Object.keys(filters)[index]]
@@ -259,7 +261,7 @@ const Home = () => {
               player_awards={generatePlayer_awardsDataForDropdown()}
    
               onReset = {handleReset}
-        />
+            />
           </div>
           <div className="col-md-9">
             <Table data={query} />
