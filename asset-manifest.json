@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/sponsorShipDemo/static/css/main.3b2eb0c9.css",
+    "main.css": "/sponsorShipDemo/static/css/main.7249404d.css",
     "main.js": "/sponsorShipDemo/static/js/main.2a555af8.js",
     "static/js/787.28cb0dcd.chunk.js": "/sponsorShipDemo/static/js/787.28cb0dcd.chunk.js",
     "static/media/20.png": "/sponsorShipDemo/static/media/20.295404c462417a8a18ab.png",
@@ -57,12 +57,12 @@
     "static/media/Under-armour-logo.png": "/sponsorShipDemo/static/media/Under-armour-logo.e392e9f50c7f6fca0412.png",
     "static/media/u90.png": "/sponsorShipDemo/static/media/u90.cb383c217bd85597844f.png",
     "index.html": "/sponsorShipDemo/index.html",
-    "main.3b2eb0c9.css.map": "/sponsorShipDemo/static/css/main.3b2eb0c9.css.map",
+    "main.7249404d.css.map": "/sponsorShipDemo/static/css/main.7249404d.css.map",
     "main.2a555af8.js.map": "/sponsorShipDemo/static/js/main.2a555af8.js.map",
     "787.28cb0dcd.chunk.js.map": "/sponsorShipDemo/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b2eb0c9.css",
+    "static/css/main.7249404d.css",
     "static/js/main.2a555af8.js"
   ]
 }
