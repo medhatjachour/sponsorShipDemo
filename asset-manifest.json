@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sponsorShipDemo/static/css/main.379a51b2.css",
-    "main.js": "/sponsorShipDemo/static/js/main.13daff31.js",
+    "main.css": "/sponsorShipDemo/static/css/main.0f6fc864.css",
+    "main.js": "/sponsorShipDemo/static/js/main.c2d829b6.js",
     "static/js/787.28cb0dcd.chunk.js": "/sponsorShipDemo/static/js/787.28cb0dcd.chunk.js",
     "static/media/20.png": "/sponsorShipDemo/static/media/20.295404c462417a8a18ab.png",
     "static/media/12.png": "/sponsorShipDemo/static/media/12.23dc54b233e97173ea30.png",
@@ -57,12 +57,12 @@
     "static/media/Under-armour-logo.png": "/sponsorShipDemo/static/media/Under-armour-logo.e392e9f50c7f6fca0412.png",
     "static/media/u90.png": "/sponsorShipDemo/static/media/u90.cb383c217bd85597844f.png",
     "index.html": "/sponsorShipDemo/index.html",
-    "main.379a51b2.css.map": "/sponsorShipDemo/static/css/main.379a51b2.css.map",
-    "main.13daff31.js.map": "/sponsorShipDemo/static/js/main.13daff31.js.map",
+    "main.0f6fc864.css.map": "/sponsorShipDemo/static/css/main.0f6fc864.css.map",
+    "main.c2d829b6.js.map": "/sponsorShipDemo/static/js/main.c2d829b6.js.map",
     "787.28cb0dcd.chunk.js.map": "/sponsorShipDemo/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.379a51b2.css",
-    "static/js/main.13daff31.js"
+    "static/css/main.0f6fc864.css",
+    "static/js/main.c2d829b6.js"
   ]
 }
