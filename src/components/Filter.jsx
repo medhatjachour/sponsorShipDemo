@@ -67,7 +67,7 @@ const reset =() =>{
     <div className="row ">
       
     <div className="col-sm-12 my-2 nameHolder">
-        <h4 htmlFor="name">Filter By Name</h4>
+        <h4 htmlFor="name">Search By Name</h4>
         <input
           placeholder='search ...'
           type="text"

@@ -4,7 +4,7 @@
   border-collapse: collapse;
   width: 100%;
   position: relative;
-  top: 50px;
+  top: 1px;
 
 }
 .basicSearch a{
@@ -17,7 +17,7 @@ padding-left: 8px;
 }
 .basicSearch .theader{
   position: sticky; 
-  top: 55px;
+  top: 1px;
 }
 .basicSearch td,
 .basicSearch th {

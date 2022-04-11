@@ -1,13 +1,22 @@
 import React, { useState } from "react";
-import Table from "../components/table";
 import { Users } from "../dummydata";
+import { useGlobalState } from "../globalState";  
+import Table from "../components/table";
 import Filter from "../components/Filter";
 import "./home.css";
 
+
 let theData
 const Home = () => {
+  
 
-  const [query, setQuery] = useState(Users);
+  
+  const theDataGlobally =  useGlobalState("theGlobalData")
+  console.log(theDataGlobally[0]);
+  const [query, setQuery] = useGlobalState("theGlobalData");
+
+
+  //const [query, setQuery] = useState(Users);
 
 
   const handleFilterName = (name) => {

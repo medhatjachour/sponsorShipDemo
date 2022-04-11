@@ -1,6 +1,7 @@
 import "./playerPage.css";
 import { Users } from "../dummydata";
 import { NavLink, useParams} from "react-router-dom";
+import { setGlobalState } from "../globalState";  
 import React, { useState, useEffect } from "react";
 import img from "../assets/u90.png";
 
@@ -13,6 +14,7 @@ import { BsArrowLeftShort } from "react-icons/bs";
 import Image from "react-bootstrap/Image";
 import { ProgressBar } from "react-bootstrap";
 import { createHashHistory } from "history";
+
 const Playerpage = () => {
   console.log("we are at the player page mother fucker pitch");
   const { id } = useParams();
@@ -51,7 +53,10 @@ const Playerpage = () => {
   });
   const goBackPage = () => {
     createHashHistory().back()
-  
+  }
+  const goBackNewPage = () => {
+    createHashHistory().back()
+    setGlobalState("theGlobalData", Users)
   }
   return (
     <>
@@ -183,7 +188,8 @@ const Playerpage = () => {
              <BsArrowLeftShort/> Back  
          
              </Button>
-            <NavLink variant="primary" to="/" className = "newSearchButton">New Search</NavLink>{' '}
+             
+            <NavLink variant="primary" to="/" className = "newSearchButton" onClick={goBackNewPage}>New Search</NavLink>{' '}
           </div>
         </div>
       </div>
