@@ -15,9 +15,11 @@
     margin: 0px;
     padding: 0px;
 }
-.btn-success{
-    float: right;
-}
 .nameHolder{
     padding-bottom: 20px;
+}
+.makeItRed{
+background-color: #CC0000!important;
+border:1px solid #CC0000!important;
+float: right;
 }

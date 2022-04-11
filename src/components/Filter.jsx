@@ -192,7 +192,7 @@ const reset =() =>{
       
       <div className="col-sm-12 my-2">
       <span onClick={reset}> <Button variant="outline-danger" onClick={onReset}> Reset </Button></span>
-      <Button variant="success" onClick={handleFilters}>Filter</Button>
+      <Button className='makeItRed' variant="danger" onClick={handleFilters}>Filter</Button>
       </div>
      
     </div>
