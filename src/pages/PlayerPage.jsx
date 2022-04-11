@@ -14,6 +14,7 @@ import Image from "react-bootstrap/Image";
 import { ProgressBar } from "react-bootstrap";
 import { createHashHistory } from "history";
 const Playerpage = () => {
+  console.log("we are at the player page mother fucker pitch");
   const { id } = useParams();
 
   const [player, setPlayer] = useState([]);
@@ -27,10 +28,7 @@ const Playerpage = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const getPlayer = () => {
-      //setLoading(true);
-      //const response = await fetch(`http://localhost:3000/fakeProdycts.json/Players/${id}`)
 
-      //src=require(`../assets/web/${player.id}.png`)
       setPlayer(Users[id]);
 
       setLoading(false);
@@ -40,8 +38,6 @@ const Playerpage = () => {
 
   useEffect(() => {
     const getPlayer_img = () => {
-      //setPlayer_img(require(`../assets/web/${player.id}.png`));
-
       if (loading) {
         setPlayer_img(require(`../assets/web/user.png`));
         setSponsor_img(require(`../assets/web/user.png`));
@@ -55,7 +51,6 @@ const Playerpage = () => {
   });
   const goBackPage = () => {
     createHashHistory().back()
-    
   
   }
   return (

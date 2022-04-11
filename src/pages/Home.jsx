@@ -4,10 +4,9 @@ import { Users } from "../dummydata";
 import Filter from "../components/Filter";
 import "./home.css";
 
-let theData = Users
-
+let theData
 const Home = () => {
-  
+
   const [query, setQuery] = useState(Users);
 
 
@@ -27,18 +26,18 @@ const Home = () => {
 
 
   const handleFilters = (filters) =>{
-    
+    console.log("We doing filters");
     let theData = Users
     for (let index = 0; index < (Object.keys(filters)).length; index++) {
      const field = Object.keys(filters)[index]
      const value = filters[Object.keys(filters)[index]]
-      console.log("heData");
-      console.log(theData);
+
      switch (field) {
        case "name":
          //onNameFilter(value);
             if (!value) { 
-              return setQuery(theData)
+              //return setQuery(theData)
+              console.log('name is nothing');
             }
             else{
               
@@ -264,6 +263,7 @@ const Home = () => {
             />
           </div>
           <div className="col-md-9">
+           {console.log(query)}
             <Table data={query} />
           </div>
         </div>
