@@ -5,7 +5,8 @@ import { setGlobalState } from "../globalState";
 import React, { useState, useEffect } from "react";
 import img from "../assets/u90.png";
 
-import { Dropdown, Button } from "react-bootstrap";
+import ReactTooltip from 'react-tooltip'
+import { Dropdown, Button} from "react-bootstrap";
 import { BsThreeDots } from "react-icons/bs";
 
 import { BsExclamationCircle } from "react-icons/bs";
@@ -58,6 +59,13 @@ const Playerpage = () => {
     createHashHistory().back()
     setGlobalState("theGlobalData", Users)
   }
+   const showDisc = () =>{
+     document.getElementById("theDiscMenu").classList.add("displayDIcs")
+   }
+   
+   const HideDisc = () =>{
+    document.getElementById("theDiscMenu").classList.remove("displayDIcs")
+  }
   return (
     <>
       <div className="plr_cont container">
@@ -108,27 +116,27 @@ const Playerpage = () => {
           <div className="plr_col row common">
             <div className="col-md-3 ccmon">
               <h5>
-                Personality <BsExclamationCircle />{" "}
+                Personality{" "}
               </h5>
               <p>{player.Personality_Type}</p>
             </div>
             <div className="col-md-3 ccmon">
               <h5>
-                Ethnicity <BsExclamationCircle />{" "}
+                Ethnicity{" "}
               </h5>
 
               <p>{player.Ethnicity} </p>
             </div>
             <div className="col-md-3 ccmon">
               <h5>
-                Position <BsExclamationCircle />{" "}
+                Position{" "}
               </h5>
 
               <p>{player.League_Position} </p>
             </div>
             <div className="col-md-3 ccmon cmonl">
               <h5>
-                Current Sponsor <BsExclamationCircle />{" "}
+                Current Sponsor{" "}
               </h5>
               <img src={sponsor_img} alt={player.Sponsor}></img>
 
@@ -137,30 +145,49 @@ const Playerpage = () => {
 
           <div className="plr_col row common">
             <div className="col-md-3 ccmon">
-              <h5>
-                {" "}
-                Predicted sponsorship <BsExclamationCircle />{" "}
+              
+      
+              <h5 className="hoverasdf">
+                  Predicted sponsorship
+              value (PSV)  <BsExclamationCircle
+              onMouseEnter={showDisc}
+              onMouseLeave={HideDisc}
+              />{" "}
+              
+              <div className="tooltipmain" id="theDiscMenu" 
+              onMouseEnter={showDisc}
+              onMouseLeave={HideDisc}
+              >
+                <p>
+                    <h5>                
+                  Predicted sponsorship value
+                  </h5>
+                  The predicted sponsorship
+                  value is based on an athlete's
+                  achievements, performance
+                  and social engagement.
+                </p>
+              </div>
               </h5>
-
               <p>€{parseInt(player.Predicted_Sponsorship_value).toLocaleString("en-US")} </p>
             </div>
             <div className="col-md-3 ccmon">
               <h5>
-                Total followers <BsExclamationCircle />{" "}
+                Total followers{" "}
               </h5>
 
               <p>{parseInt(player.Total_Followers).toLocaleString("en-US")} </p>
             </div>
             <div className="col-md-3 ccmon">
               <h5>
-                Personal Awards <BsExclamationCircle />{" "}
+                Personal Awards{" "}
               </h5>
 
               <p>{player.Individual_Awards} </p>
             </div>
             <div className="col-md-3 ccmon cmonl">
               <h5>
-                Ad value equivalent <BsExclamationCircle />{" "}
+                Ad value equivalent{" "}
               </h5>{" "}
               <p>€{Math.abs(parseInt(player.Ad_value_equivalent)) > 999 ? Math.sign(parseInt(player.Ad_value_equivalent))*((Math.abs(parseInt(player.Ad_value_equivalent))/1000).toFixed(1)) + 'k' : Math.sign(parseInt(player.Ad_value_equivalent))*Math.abs(parseInt(player.Ad_value_equivalent))}</p>
             </div>
