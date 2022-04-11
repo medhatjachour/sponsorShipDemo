@@ -16,7 +16,7 @@
     /*background-color:  #02878c;*/
     width: 100%;
     margin-bottom: 50px;
-    height: 170px;
+    /*height: 170px;*/
     --bs-gutter-x :0rem!important;
     padding: 5px;
     padding-right: 15px;
@@ -226,4 +226,62 @@
     font-size: 20px;
     text-decoration: none;
     border-radius: 5px;
+}
+@media only screen and (max-width: 992px){
+    .player_img {
+    padding: 10px 10px 10px 10px;
+    }.ic-img div {
+        position: absolute;
+        top: 20px;
+        display: inline-grid;
+        width: 150px;
+        right: -14px;
+    }
+    .ic-img img {
+        position: relative;
+        top: 10px;
+        width: 120px;
+        height: 140px;
+       left: 0px; 
+    }.img-bigCnt .dropdown {
+        float: right;
+        position: absolute;
+    }
+}
+@media only screen and (max-width: 769px){
+    .common .ccmon {
+    border-right: 0px;
+    border-bottom: 1px solid gray;
+    padding: 20px 0px;
+    }
+    .common .cmonl {
+        border-right: 0px;
+        border-bottom: 0px solid gray;
+    }
+    .plr_cont{
+        max-width: 800px!important;
+    }
+    .player_img {
+        text-align: center;
+        padding: 10px 10px 10px 10px;
+    }
+    .img-bigCnt{
+        text-align: center;
+    }
+    .ic-img{
+        left: 25%;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .plr_cont .raw {
+    padding: 8px;
+    padding-top: 20px;
+    background-color: #f8f9fa;
+    }
+    .newSearchButton{
+        
+    padding: 10px 25px;
+    }
+
 }
